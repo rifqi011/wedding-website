@@ -160,10 +160,14 @@ body {
 	font-size: 20px;
 }
 
-.cover__dear span {
+#name {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: var(--text-color-red);
+}
+
+#address {
+    text-transform: capitalize;
 }
 
 .cover-open {
