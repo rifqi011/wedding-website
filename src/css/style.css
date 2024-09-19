@@ -159,7 +159,7 @@ body {
 	position: fixed;
 	bottom: -120%;
 	left: 0;
-	background: rgba(234, 228, 221, .5);
+	background: rgba(234, 228, 221, 0.5);
 	backdrop-filter: blur(4px);
 	box-shadow: 0 -1px 12px rgba(131, 57, 71, 0.5);
 	width: 100%;
@@ -318,4 +318,30 @@ body {
 	font-size: 2rem;
 	gap: 1rem;
 	color: var(--text-color-red);
+}
+
+/* Countdown */
+#countdown {
+	align-items: center;
+	gap: 1.8rem;
+}
+
+#countdown h1 {
+    font-size: 40px;
+    font-family: var(--cursive-font);
+    color: var(--text-color-red);
+}
+
+#timer {
+    width: 100%;
+}
+
+#timer ul {
+    justify-content: space-evenly;
+}
+
+.time {
+    align-items: center;
+    font-size: 25px;
+    font-family: var(--regular-font);
 }

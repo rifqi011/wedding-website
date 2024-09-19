@@ -40,3 +40,30 @@ window.addEventListener("scroll", () => {
 		header.classList.remove("scroll-header");
 	}
 });
+
+// Countdown
+(function () {
+	const second = 1000,
+		minute = second * 60,
+		hour = minute * 60,
+		day = hour * 24;
+
+	const countDown = new Date("September 20, 2024 00:00:00").getTime(),
+		wedding = setInterval(function () {
+			const now = new Date().getTime(),
+				distance = countDown - now;
+
+			document.getElementById("days").innerText = Math.floor(distance / day);
+			document.getElementById("hours").innerText = Math.floor((distance % day) / hour);
+			document.getElementById("minutes").innerText = Math.floor((distance % hour) / minute);
+			document.getElementById("seconds").innerText = Math.floor((distance % minute) / second);
+
+			if (distance < 0) {
+				document.getElementById("headline-timer").innerText = "Wedding Day !";
+				// document.getElementById("timer").style.display = "none";
+				(document.getElementById("days").innerText = "0"), (document.getElementById("hours").innerText = "0"), (document.getElementById("minutes").innerText = "0"), (document.getElementById("seconds").innerText = "0");
+				document.getElementById("content-timer").style.display = "block";
+				clearInterval(wedding);
+			}
+		}, 0);
+})();
