@@ -5,8 +5,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Romeo & Juliet Wedding</title>
 		<link rel="stylesheet" href="src/css/style.css" />
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 	</head>
-	<body>
+	<body id="body">
+		<!-- Navigation Bar -->
+		<header id="header">
+			<nav class="nav container" id="nav-menu">
+				<ul class="nav__list flex-row">
+					<li class="nav__item flex-row">
+						<a href="#home" class="nav__link active-link flex-col">
+							<i class="bx bx-home-alt nav__icon"></i>
+							<span class="nav__name">Home</span>
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#profile" class="nav__link flex-col">
+							<i class="bx bx-group nav__icon"></i>
+							<span class="nav__name">Profile</span>
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#agenda" class="nav__link flex-col">
+							<i class="bx bx-book-alt nav__icon"></i>
+							<span class="nav__name">Agenda</span>
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#gallety" class="nav__link flex-col">
+							<i class="bx bx-image-alt nav__icon"></i>
+							<span class="nav__name">Gallery</span>
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#message" class="nav__link flex-col">
+							<i class="bx bx-message-square-detail nav__icon"></i>
+							<span class="nav__name">Message</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 		<section id="cover" class="section flex-row">
 			<!-- Background -->
 			<img class="background top-left" src="assets/img/border-top-left.png" alt="" />
@@ -44,6 +86,8 @@
 				<p class="cover__dear flex-col text-center">Dear<span class="name"></span><span class="address"></span></p>
 			</div>
 		</section>
+
+		<section style="height: 100vh"></section>
 
 		<!-- Script -->
 		<script src="src/js/script.js"></script>
