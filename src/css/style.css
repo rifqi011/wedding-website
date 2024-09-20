@@ -121,7 +121,7 @@ body {
 .section__title {
 	color: var(--text-color-red);
 	font-family: var(--cursive-font);
-	font-size: 35px;
+	font-size: 40px;
 }
 
 /* Background */
@@ -326,22 +326,63 @@ body {
 	gap: 1.8rem;
 }
 
-#countdown h1 {
-    font-size: 40px;
-    font-family: var(--cursive-font);
-    color: var(--text-color-red);
-}
-
 #timer {
-    width: 100%;
+	width: 100%;
 }
 
 #timer ul {
-    justify-content: space-evenly;
+	justify-content: space-evenly;
+}
+
+#headline-timer  {
+    text-transform: uppercase;
 }
 
 .time {
-    align-items: center;
+	align-items: center;
+	font-size: 25px;
+	font-family: var(--regular-font);
+}
+
+/* Agenda */
+#agenda {
+	padding-block: 50px;
+	gap: 2rem;
+}
+
+.agenda__container {
+	gap: 2rem;
+}
+
+.agenda__content {
+	border-radius: 2rem;
+	gap: 1.5rem;
+	padding: 50px 20px;
+	box-shadow: 0px 0px 30px 0px var(--text-color-red);
+}
+
+.agenda__title {
+    color: var(--text-color-red);
+    font-family: var(--cursive-font);
     font-size: 25px;
-    font-family: var(--regular-font);
+}
+
+.agenda__date {
+    text-transform: uppercase;
+}
+
+.agenda__location {
+    gap: 0.5rem;
+}
+
+.agenda__button {
+    justify-content: center;
+}
+
+.btn-agenda {
+    background-color: var(--black-color);
+    color: var(--background-light);
+    width: auto;
+    padding: 8px;
+    border-radius: 10px;
 }
