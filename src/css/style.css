@@ -245,13 +245,13 @@ body {
 	font-size: 20px;
 }
 
-.name {
+.guest__name {
 	text-transform: uppercase;
 	font-weight: 600;
 	color: var(--text-color-red);
 }
 
-.address {
+.guest__address {
 	text-transform: capitalize;
 }
 
@@ -347,7 +347,8 @@ body {
 /* Agenda */
 #agenda,
 #gallery,
-#gift {
+#gift,
+#message {
 	/* section lainnya izin numpang ya banh */
 	padding-block: 50px;
 	gap: 2rem;
@@ -362,6 +363,7 @@ body {
 	gap: 1.5rem;
 	padding: 50px 20px;
 	box-shadow: 0px 0px 30px 0px var(--text-color-red);
+	background-color: #fff;
 }
 
 .agenda__title {
@@ -445,6 +447,7 @@ body {
 	padding: 1rem;
 	border-radius: 0.5rem;
 	width: 100%;
+	background-color: #fff;
 }
 
 .gift__card img {
@@ -465,4 +468,50 @@ body {
 
 .nama__bank {
 	color: var(--text-color-red);
+}
+
+/* Message */
+.input__container,
+#message__container {
+	background-color: #fff;
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: 0px 0px 10px 5px rgba(131, 57, 71, 0.5);
+	gap: 1rem;
+	font-size: 18px;
+}
+
+.input__wrapper {
+	gap: 0.4rem;
+}
+
+#name__input {
+	border-bottom: 1px solid var(--text-color-red);
+}
+
+#message__input {
+	height: 100px;
+	outline: none;
+	border: 1px solid var(--text-color-red);
+	font-family: var(--regular-font);
+	font-size: 15px;
+}
+
+.message__content {
+	background-color: rgb(234, 228, 221);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.message__content h4 {
+	font-size: 20px;
+	color: var(--text-color-red);
+}
+
+/* Footer */
+#footer {
+    padding-bottom: 100px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-color-red);
 }

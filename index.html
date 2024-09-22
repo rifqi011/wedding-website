@@ -65,7 +65,7 @@
 
 				<img class="cover__img text-center" src="assets/img/cover.png" alt="" />
 
-				<p class="cover__dear flex-col text-center">Dear<span class="name"></span><span class="address"></span></p>
+				<p class="cover__dear flex-col text-center">Dear<span class="guest__name"></span><span class="guest__address"></span></p>
 
 				<button id="cover-btn" class="btn btn-primary flex-row">Open Invitation</button>
 			</div>
@@ -85,7 +85,7 @@
 
 				<img class="home__img text-center" src="assets/img/cover.png" alt="" />
 
-				<p class="cover__dear flex-col text-center">Dear<span class="name"></span><span class="address"></span></p>
+				<p class="cover__dear flex-col text-center">Dear<span class="guest__name"></span><span class="guest__address"></span></p>
 			</div>
 		</section>
 
@@ -244,7 +244,29 @@
 			</div>
 		</section>
 
-		<section style="height: 100vh"></section>
+		<!-- Message -->
+		<section id="message" class="flex-col container">
+			<h1 class="section__title text-center">Message</h1>
+			<form action="" class="input__container flex-col">
+				<div class="input__wrapper flex-col">
+					<label for="name__input">Name</label>
+					<input type="text" name="name" id="name__input" required autocomplete="off" placeholder="Enter your name" />
+				</div>
+				<div class="input__wrapper flex-col">
+					<label for="message__input">Message</label>
+					<textarea name="message" id="message__input" placeholder="Message...."></textarea>
+				</div>
+				<div class="message__button">
+					<button onclick="submitMessage()" type="button" class="btn btn-agenda">Submit</button>
+				</div>
+			</form>
+
+			<div id="message__container" class="flex-col"></div>
+		</section>
+
+        <footer id="footer" class="text-center">
+            <p>Copyright @2024 RifqiBanuSafingi.</p>
+        </footer>
 
 		<!-- Script -->
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -19,11 +19,11 @@ function getQueryParam(param) {
 const name = getQueryParam("name");
 const address = getQueryParam("address");
 
-document.querySelectorAll(".name").forEach((element) => {
+document.querySelectorAll(".guest__name").forEach((element) => {
 	element.textContent = name ? name : "Nama tidak ditemukan di URL.";
 });
 
-document.querySelectorAll(".address").forEach((element) => {
+document.querySelectorAll(".guest__address").forEach((element) => {
 	element.textContent = address ? address : "Alamat tidak ditemukan di URL.";
 });
 
@@ -125,3 +125,30 @@ const copyMandiri = async () => {
 		console.error("Failed to copy: ", err);
 	}
 };
+
+// Message
+const messageContainer = document.getElementById("message__container");
+messageContainer.style.display= "none"
+function submitMessage() {
+	let name = document.getElementById("name__input").value;
+	let message = document.getElementById("message__input").value;
+
+	const messageName = document.createElement("h4");
+	messageName.textContent = name;
+
+	const messageMessage = document.createElement("p");
+	messageMessage.textContent = message;
+
+	const messageContent = document.createElement("div");
+	messageContent.classList.add("message__content");
+	messageContent.append(messageName);
+	messageContent.append(messageMessage);
+
+	const messageContainer = document.getElementById("message__container");
+	messageContainer.append(messageContent);
+
+	document.getElementById("name__input").value = "";
+	document.getElementById("message__input").value = "";
+
+    messageContainer.style.display = "flex"
+}
