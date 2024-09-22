@@ -138,10 +138,10 @@
 			<h1 class="section__title">Countdown</h1>
 			<div id="timer">
 				<ul class="flex-row">
-					<li class="time flex-col"><span id="days"></span>hari</li>
-					<li class="time flex-col"><span id="hours"></span>jam</li>
-					<li class="time flex-col"><span id="minutes"></span>menit</li>
-					<li class="time flex-col"><span id="seconds"></span>detik</li>
+					<li class="time flex-col"><span id="days"></span>Days</li>
+					<li class="time flex-col"><span id="hours"></span>Hours</li>
+					<li class="time flex-col"><span id="minutes"></span>Minutes</li>
+					<li class="time flex-col"><span id="seconds"></span>Seconds</li>
 				</ul>
 			</div>
 			<div id="content-timer">
@@ -217,6 +217,29 @@
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Gift -->
+		<section id="gift" class="container flex-col text-center">
+			<h1 class="section__title">Gift</h1>
+			<div class="gift__container flex-row">
+				<div class="gift__card flex-row">
+					<div class="gift__data flex-col">
+						<h5 class="nama__bank">BCA</h5>
+						<h5 class="nama__nasabah">Romeo</h5>
+						<p class="flex-row" onclick="copyBca()"><span id="no-rekening-bca">1234567890</span>&nbsp;<i class="bx bx-clipboard"></i></p>
+					</div>
+					<img src="assets/img/gift/bca.png" alt="" />
+				</div>
+				<div class="gift__card flex-row">
+					<div class="gift__data flex-col">
+						<h5 class="nama__bank">Mandiri</h5>
+						<h5 class="nama__nasabah">Romeo</h5>
+						<p class="flex-row" onclick="copyMandiri()"><span id="no-rekening-mandiri">1357908642</span>&nbsp;<i class="bx bx-clipboard"></i></p>
+					</div>
+					<img src="assets/img/gift/mandiri.png" alt="" />
 				</div>
 			</div>
 		</section>

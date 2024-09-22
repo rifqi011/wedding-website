@@ -23,12 +23,11 @@ document.querySelectorAll(".name").forEach((element) => {
 	element.textContent = name ? name : "Nama tidak ditemukan di URL.";
 });
 
-// Update all elements with class 'address'
 document.querySelectorAll(".address").forEach((element) => {
 	element.textContent = address ? address : "Alamat tidak ditemukan di URL.";
 });
 
-// Scroll
+// Scroll Navigation Bar
 const scrollY = window.pageYOffset;
 
 window.addEventListener("scroll", () => {
@@ -106,3 +105,23 @@ window.addEventListener("click", (event) => {
 		body.style.overflow = "scroll";
 	}
 });
+
+// Copy Rek
+let rekBca = document.getElementById("no-rekening-bca").innerText;
+const copyBca = async () => {
+	try {
+		await navigator.clipboard.writeText(rekBca);
+		alert("Copied to clipboard !");
+	} catch (err) {
+		console.error("Failed to copy: ", err);
+	}
+};
+let rekMandiri = document.getElementById("no-rekening-mandiri").innerText;
+const copyMandiri = async () => {
+	try {
+		await navigator.clipboard.writeText(rekMandiri);
+		alert("Copied to clipboard !");
+	} catch (err) {
+		console.error("Failed to copy: ", err);
+	}
+};

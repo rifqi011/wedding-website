@@ -345,7 +345,10 @@ body {
 }
 
 /* Agenda */
-#agenda {
+#agenda,
+#gallery,
+#gift {
+	/* section lainnya izin numpang ya banh */
 	padding-block: 50px;
 	gap: 2rem;
 }
@@ -388,11 +391,6 @@ body {
 }
 
 /* Gallery */
-#gallery {
-	gap: 2rem;
-	padding-block: 50px;
-}
-
 .gallery__container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -431,4 +429,40 @@ body {
 	color: var(--background-light);
 	font-size: 30px;
 	cursor: pointer;
+}
+
+/* Gift */
+.gift__container {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.gift__card {
+	box-shadow: 0px 0px 10px 5px rgba(131, 57, 71, 0.5);
+	justify-content: space-between;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	width: 100%;
+}
+
+.gift__card img {
+	height: 80px;
+	width: auto;
+}
+
+.gift__data {
+	text-align: left;
+	font-size: 24px;
+	font-weight: 400;
+	justify-content: space-between;
+}
+
+.gift__data p {
+	font-size: 18px;
+}
+
+.nama__bank {
+	color: var(--text-color-red);
 }
