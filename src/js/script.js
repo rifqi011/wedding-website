@@ -40,6 +40,40 @@ window.addEventListener("scroll", () => {
 	}
 });
 
+// Active menu
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav__link");
+
+window.addEventListener("scroll", () => {
+	const scrollY = window.pageYOffset;
+	const pageHeight = document.documentElement.scrollHeight;
+	const viewportHeight = window.innerHeight;
+	const bottomOfPage = scrollY + viewportHeight >= pageHeight;
+
+	sections.forEach((current) => {
+		const sectionHeight = current.offsetHeight;
+		const sectionTop = current.offsetTop - 50; // Offset untuk mengkompensasi margin atas
+		const sectionId = current.getAttribute("id");
+
+		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+			// Remove class active-link dari semua nav__link
+			navLinks.forEach((link) => {
+				link.classList.remove("active-link");
+			});
+			// Tambahkan class active-link ke nav__link yang sesuai
+			document.querySelector(".nav__link[href*=" + sectionId + "]").classList.add("active-link");
+		}
+
+		// Jika sudah sampai bagian paling bawah, aktifkan menu 'Message'
+		if (bottomOfPage) {
+			navLinks.forEach((link) => {
+				link.classList.remove("active-link");
+			});
+			document.querySelector(".nav__link[href*='message']").classList.add("active-link");
+		}
+	});
+});
+
 // Countdown
 (function () {
 	const second = 1000,
@@ -128,7 +162,7 @@ const copyMandiri = async () => {
 
 // Message
 const messageContainer = document.getElementById("message__container");
-messageContainer.style.display= "none"
+messageContainer.style.display = "none";
 function submitMessage() {
 	let name = document.getElementById("name__input").value;
 	let message = document.getElementById("message__input").value;
@@ -150,5 +184,5 @@ function submitMessage() {
 	document.getElementById("name__input").value = "";
 	document.getElementById("message__input").value = "";
 
-    messageContainer.style.display = "flex"
+	messageContainer.style.display = "flex";
 }
