@@ -6,6 +6,7 @@
 		<title>Romeo & Juliet Wedding</title>
 		<link rel="stylesheet" href="src/css/style.css" />
 		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 	<body id="body">
 		<!-- Navigation Bar -->
@@ -155,38 +156,75 @@
 					<h4 class="agenda__title">Wedding Reception</h4>
 					<p class="agenda__date">Thursday, 09 January 2025</p>
 					<p class="agenda__date">Friday, 10 January 2025</p>
-                    <p class="agenda__location flex-col text-center"><span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?</p>
-                    <div class="agenda__button flex-row">
-                        <a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
-
-                    </div>
-                </div>
+					<p class="agenda__location flex-col text-center">
+						<span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?
+					</p>
+					<div class="agenda__button flex-row">
+						<a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
+					</div>
+				</div>
 
 				<div class="agenda__content flex-col text-center">
 					<h4 class="agenda__title">Mariage</h4>
 					<p class="agenda__date">Saturday, 11 January 2025</p>
 					<p class="agenda__time">07.00 - 10.00</p>
-                    <p class="agenda__location flex-col text-center"><span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?</p>
-                    <div class="agenda__button flex-row">
-                        <a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
-                    </div>
-                </div>
+					<p class="agenda__location flex-col text-center">
+						<span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?
+					</p>
+					<div class="agenda__button flex-row">
+						<a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
+					</div>
+				</div>
 
 				<div class="agenda__content flex-col text-center">
 					<h4 class="agenda__title">Ngunduh Mantu</h4>
 					<p class="agenda__date">Sunday, 26 January 2025</p>
 					<p class="agenda__time">07.00 - 10.00</p>
-                    <p class="agenda__location flex-col text-center"><span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?</p>
-                    <div class="agenda__button flex-row">
-                        <a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
-                    </div>
-                </div>
+					<p class="agenda__location flex-col text-center">
+						<span><i class="bx bx-map-pin"></i>&nbsp;Lorem, ipsum.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis velit quisquam?
+					</p>
+					<div class="agenda__button flex-row">
+						<a href="" target="_blank" class="btn btn-agenda"><i class="bx bx-map-pin"></i>&nbsp;Location</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Gallery -->
+		<section id="gallery" class="container flex-col text-center">
+			<h1 class="section__title">Gallery</h1>
+
+			<div class="gallery__container">
+				<img loading="lazy" src="assets/img/gallery/1.png" alt="" class="gallery__img" />
+				<img loading="lazy" src="assets/img/gallery/2.png" alt="" class="gallery__img" />
+				<img loading="lazy" src="assets/img/gallery/3.png" alt="" class="gallery__img" />
+				<img loading="lazy" src="assets/img/gallery/4.png" alt="" class="gallery__img" />
+			</div>
+
+			<div id="gallery-modal" class="modal">
+				<span id="close-modal"><i class="bx bx-x"></i></span>
+				<div class="modal__content">
+					<!-- Swiper -->
+					<div class="swiper-container swiper">
+						<div class="swiper-wrapper">
+							<div loading="lazy" class="swiper-slide"><img src="assets/img/gallery/1.png" alt="" /></div>
+							<div loading="lazy" class="swiper-slide"><img src="assets/img/gallery/2.png" alt="" /></div>
+							<div loading="lazy" class="swiper-slide"><img src="assets/img/gallery/3.png" alt="" /></div>
+							<div loading="lazy" class="swiper-slide"><img src="assets/img/gallery/4.png" alt="" /></div>
+						</div>
+
+						<!-- Tambahkan navigation -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<section style="height: 100vh"></section>
 
 		<!-- Script -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="src/js/script.js"></script>
 	</body>
 </html>
