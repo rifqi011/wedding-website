@@ -120,7 +120,7 @@ let modal = document.getElementById("gallery-modal");
 let closeModal = document.getElementById("close-modal");
 
 document.querySelectorAll(".gallery__img").forEach((img, index) => {
-	img.addEventListener("click", function () {
+	img.addEventListener("click", () => {
 		modal.style.display = "block";
 		swiper.slideTo(index); // Pindah ke slide sesuai gambar yang di-klik
 		body.style.overflow = "hidden";
@@ -186,3 +186,8 @@ function submitMessage() {
 
 	messageContainer.style.display = "flex";
 }
+
+AOS.init({
+	duration: 2000,
+	offsetParent: document.querySelector("#main-body"),
+});
