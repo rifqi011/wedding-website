@@ -625,6 +625,14 @@ body {
 		font-size: 20px;
 	}
 
+	/* Section */
+	#agenda,
+	#gallery,
+	#gift,
+	#message {
+		padding-block: 100px;
+	}
+
 	/* Navigation Bar */
 	#header {
 		width: 100%;
@@ -648,5 +656,26 @@ body {
 
 	.home__img {
 		width: 300px;
+	}
+
+	/* Profile */
+	.bride {
+		justify-content: space-around;
+	}
+
+	.bride__content img {
+		width: 300px;
+	}
+
+	/* Countdown */
+	#countdown {
+		width: 40%;
+	}
+
+	/* Agenda */
+	.agenda__container {
+		margin: auto;
+		gap: 2rem;
+		flex-direction: row;
 	}
 }
