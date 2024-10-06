@@ -189,5 +189,5 @@ function submitMessage() {
 
 AOS.init({
 	duration: 2000,
-	offsetParent: document.querySelector("#main-body"),
+	offsetParent: document.querySelector("#body"),
 });
