@@ -101,44 +101,75 @@ window.addEventListener("scroll", () => {
 		}, 0);
 })();
 
-// Swiper
-let swiper = new Swiper(".swiper-container", {
-	slidesPerView: 1,
-	spaceBetween: 10,
-	centeredSlides: true,
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
-	autoplay: {
-		enabled: false,
-	},
-	lazy: true,
-});
+// Gallery
+let images = [];
+let currentSlideIndex = 0;
+const lightBoxContainer = document.createElement("div");
+lightBoxContainer.className = "lightbox";
+lightBoxContainer.id = "lightbox";
+document.body.appendChild(lightBoxContainer);
+function openLightBox(index) {
+	images = document.querySelectorAll("#gallery .gallery__container img");
 
-let modal = document.getElementById("gallery-modal");
-let closeModal = document.getElementById("close-modal");
+	const lightBoxContent = document.createElement("div");
+	lightBoxContent.className = "lightbox__content";
 
-document.querySelectorAll(".gallery__img").forEach((img, index) => {
-	img.addEventListener("click", () => {
-		modal.style.display = "block";
-		swiper.slideTo(index); // Pindah ke slide sesuai gambar yang di-klik
-		body.style.overflow = "hidden";
-		swiper.update();
+	let htmlContent = "";
+	images.forEach(function (image, i) {
+		htmlContent += `<div class="mySlide" style="display: ${i === index ? "block" : "none"};">
+                            <img src="${image.src}" class="lightbox__img">
+                        </div>`;
 	});
-});
 
-closeModal.addEventListener("click", () => {
-	modal.style.display = "none";
-	body.style.overflow = "scroll";
-});
+	htmlContent += `<span class="close cursor" onclick="closeLightBox()"><i class="bx bx-x-circle"></i></span>
+				    <a onclick="changeSlide(-1)" class="prev"><i class='bx bx-left-arrow-circle'></i></a>
+				    <a onclick="changeSlide(1)" class="next"><i class='bx bx-right-arrow-circle'></i></a>`;
+
+	lightBoxContent.innerHTML = htmlContent;
+	lightBoxContainer.innerHTML = "";
+	lightBoxContainer.style.display = "flex";
+	lightBoxContainer.appendChild(lightBoxContent);
+	body.style.overflow = "hidden";
+}
+
+function closeLightBox() {
+	lightBoxContainer.style.display = "none";
+	body.style.overflow = "auto";
+}
 
 window.addEventListener("click", (event) => {
-	if (event.target == modal) {
-		modal.style.display = "none";
+	if (event.target == lightBoxContainer) {
+		lightBoxContainer.style.display = "none";
 		body.style.overflow = "scroll";
 	}
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll("#gallery .gallery__container img").forEach((image, index) => {
+		image.addEventListener("click", () => {
+			openLightBox(index);
+		});
+	});
+});
+
+// Slide
+function changeSlide(n) {
+	currentSlideIndex += n;
+
+	if (currentSlideIndex >= images.length) {
+		currentSlideIndex = 0; // Loop back to start
+	}
+	if (currentSlideIndex < 0) {
+		currentSlideIndex = images.length - 1; // Loop back to end
+	}
+
+	const slides = lightBoxContainer.getElementsByClassName("mySlide");
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none"; // Hide all slides
+	}
+
+	slides[currentSlideIndex].style.display = "block"; // Show current slide
+}
 
 // Copy Rek
 let rekBca = document.getElementById("no-rekening-bca").innerText;
