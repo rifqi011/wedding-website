@@ -115,7 +115,7 @@ function openLightBox(index) {
 	lightBoxContent.className = "lightbox__content";
 
 	let htmlContent = "";
-	images.forEach(function (image, i) {
+	images.forEach((image, i) => {
 		htmlContent += `<div class="mySlide" style="display: ${i === index ? "block" : "none"};">
                             <img src="${image.src}" class="lightbox__img">
                         </div>`;
