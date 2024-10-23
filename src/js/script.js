@@ -224,3 +224,9 @@ AOS.init({
 	duration: 2000,
 	offsetParent: document.querySelector("#body"),
 });
+
+// Footer
+const date = new Date();
+let year = date.getFullYear();
+
+document.getElementById("copyright").innerText = `Copyright @${year} Rifqi Banu Safingi`;
