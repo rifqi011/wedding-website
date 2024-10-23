@@ -419,9 +419,9 @@ body {
 }
 
 .agenda__desc {
-    font-size: 18px;
-    max-width: 900px;
-    margin: auto;
+	font-size: 18px;
+	max-width: 900px;
+	margin: auto;
 }
 
 .agenda__date {
@@ -460,14 +460,16 @@ body {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(234, 228, 221, 0.8);
+	backdrop-filter: blur(5px) saturate(200%);
+	-webkit-backdrop-filter: blur(5px) saturate(200%);
+	background-color: rgba(17, 25, 40, 0.2);
 	justify-content: center;
 	align-items: center;
 }
 
 .lightbox__content {
 	position: relative;
-	width: 90%;
+	width: 80%;
 	max-width: 768px;
 	margin: auto;
 }
@@ -480,22 +482,19 @@ body {
 .close {
 	position: absolute;
 	color: white;
-    top: 10px;
-    right: 10px;
-	font-size: 40px;
+	top: 10px;
+	right: 10px;
 	cursor: pointer;
+	width: 40px;
 }
 
 .prev,
 .next {
 	cursor: pointer;
 	position: absolute;
-	width: auto;
-    top: 50%;
-    transform: translateY(-50%);
-	color: cyan;
-	font-weight: bold;
-	font-size: 40px;
+	width: 40px;
+	top: 50%;
+	transform: translateY(-50%);
 	transition: 0.6s ease;
 	user-select: none;
 }
@@ -721,22 +720,30 @@ body {
 		flex-direction: row;
 	}
 
-    /* Gallery */
-    .gallery__container {
-        width: 50%;
-        margin: auto;
-    }
+	/* Gallery */
+	.gallery__container {
+		width: 50%;
+		margin: auto;
+	}
 
-    /* Gift */
-    .gift__container {
-        width: 40%;
-        margin: auto;
-    }
+	.prev {
+		left: 10%;
+	}
 
-    /* Message */
-    .input__container,
-    #message__container {
-        width: 50%;
-        margin: auto;
-    }
+	.next {
+		right: 10%;
+	}
+
+	/* Gift */
+	.gift__container {
+		width: 40%;
+		margin: auto;
+	}
+
+	/* Message */
+	.input__container,
+	#message__container {
+		width: 50%;
+		margin: auto;
+	}
 }

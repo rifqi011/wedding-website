@@ -121,14 +121,16 @@ function openLightBox(index) {
                         </div>`;
 	});
 
-	htmlContent += `<span class="close cursor" onclick="closeLightBox()"><i class="bx bx-x-circle"></i></span>
-				    <a onclick="changeSlide(-1)" class="prev"><i class='bx bx-left-arrow-circle'></i></a>
-				    <a onclick="changeSlide(1)" class="next"><i class='bx bx-right-arrow-circle'></i></a>`;
+	const lightboxNavigation = document.createElement("div");
+	lightboxNavigation.innerHTML += `<span class="close cursor" onclick="closeLightBox()"><img src="assets/img/Times.svg"></span>
+				    <a onclick="changeSlide(-1)" class="prev"><img src="assets/img/Left.svg"></a>
+				    <a onclick="changeSlide(1)" class="next"><img src="assets/img/Right.svg"></a>`;
 
 	lightBoxContent.innerHTML = htmlContent;
 	lightBoxContainer.innerHTML = "";
 	lightBoxContainer.style.display = "flex";
 	lightBoxContainer.appendChild(lightBoxContent);
+	lightBoxContainer.appendChild(lightboxNavigation);
 	body.style.overflow = "hidden";
 }
 
