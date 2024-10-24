@@ -197,27 +197,31 @@ const copyMandiri = async () => {
 const messageContainer = document.getElementById("message__container");
 messageContainer.style.display = "none";
 function submitMessage() {
-	let name = document.getElementById("name__input").value;
-	let message = document.getElementById("message__input").value;
+	let name = document.getElementById("name__input");
+	let message = document.getElementById("message__input");
 
-	const messageName = document.createElement("h4");
-	messageName.textContent = name;
+	if (name.value && message.value) {
+		const messageName = document.createElement("h4");
+		messageName.textContent = name.value;
 
-	const messageMessage = document.createElement("p");
-	messageMessage.textContent = message;
+		const messageMessage = document.createElement("p");
+		messageMessage.textContent = message.value;
 
-	const messageContent = document.createElement("div");
-	messageContent.classList.add("message__content");
-	messageContent.append(messageName);
-	messageContent.append(messageMessage);
+		const messageContent = document.createElement("div");
+		messageContent.classList.add("message__content");
+		messageContent.append(messageName);
+		messageContent.append(messageMessage);
 
-	const messageContainer = document.getElementById("message__container");
-	messageContainer.append(messageContent);
+		const messageContainer = document.getElementById("message__container");
+		messageContainer.prepend(messageContent);
 
-	document.getElementById("name__input").value = "";
-	document.getElementById("message__input").value = "";
+		name.value = "";
+		message.value = "";
 
-	messageContainer.style.display = "flex";
+		messageContainer.style.display = "flex";
+	} else {
+		alert("Tolong isi pesan terlebih dahulu!");
+	}
 }
 
 AOS.init({

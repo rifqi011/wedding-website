@@ -568,6 +568,11 @@ body {
 	font-size: 18px;
 }
 
+#message__container {
+	max-height: 500px;
+	overflow: scroll;
+}
+
 .input__wrapper {
 	gap: 0.4rem;
 }
@@ -582,7 +587,7 @@ body {
 	border: 1px solid var(--text-color-red);
 	font-family: var(--regular-font);
 	font-size: 15px;
-    resize: none;
+	resize: none;
 }
 
 .message__content {
