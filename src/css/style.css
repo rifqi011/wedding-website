@@ -390,7 +390,8 @@ body {
 #agenda,
 #gallery,
 #gift,
-#message {
+#message,
+#maps {
 	/* section lainnya izin numpang ya banh */
 	padding-block: 50px;
 	gap: 2rem;
@@ -555,6 +556,12 @@ body {
 
 .nama__bank {
 	color: var(--text-color-red);
+}
+
+/* Maps */
+.maps {
+	margin: auto;
+	max-width: 90%;
 }
 
 /* Message */
