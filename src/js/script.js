@@ -10,22 +10,26 @@ btnCover.addEventListener("click", () => {
 	body.style.overflow = "auto";
 });
 
-// Fungsi untuk mendapatkan query parameter dari URL
+// Fungsi query parameter dari URL
 function getQueryParam(param) {
 	const urlParams = new URLSearchParams(window.location.search);
 	return urlParams.get(param);
 }
 
-const name = getQueryParam("name");
-const address = getQueryParam("address");
+const guestName = getQueryParam("name");
+const guestAddress = getQueryParam("address");
 
 document.querySelectorAll(".guest__name").forEach((element) => {
-	element.textContent = name ? name : "Nama tidak ditemukan di URL.";
+	element.textContent = guestName ? guestName : "Nama mboten enten.";
 });
 
 document.querySelectorAll(".guest__address").forEach((element) => {
-	element.textContent = address ? address : "Alamat tidak ditemukan di URL.";
+	element.textContent = guestAddress ? guestAddress : "Alamat mboten enten.";
 });
+
+// Name input from URL
+const nameInput = document.getElementById("name__input");
+nameInput.value = guestName;
 
 // Scroll Navigation Bar
 const scrollY = window.pageYOffset;
@@ -81,7 +85,7 @@ window.addEventListener("scroll", () => {
 		hour = minute * 60,
 		day = hour * 24;
 
-	const countDown = new Date("January 11, 2025 07:00:00").getTime(),
+	const countDown = new Date("November 6, 2024 08:38:00").getTime(),
 		wedding = setInterval(function () {
 			const now = new Date().getTime(),
 				distance = countDown - now;
@@ -215,7 +219,6 @@ function submitMessage() {
 		const messageContainer = document.getElementById("message__container");
 		messageContainer.prepend(messageContent);
 
-		name.value = "";
 		message.value = "";
 
 		messageContainer.style.display = "flex";
@@ -226,7 +229,6 @@ function submitMessage() {
 
 AOS.init({
 	duration: 2000,
-	offsetParent: document.querySelector("#body"),
 });
 
 // Footer
