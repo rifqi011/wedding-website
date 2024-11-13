@@ -126,9 +126,9 @@ function openLightBox(index) {
 	});
 
 	const lightboxNavigation = document.createElement("div");
-	lightboxNavigation.innerHTML += `<span class="close cursor" onclick="closeLightBox()"><img src="assets/img/Times.svg"></span>
-				    <a onclick="changeSlide(-1)" class="prev"><img src="assets/img/Left.svg"></a>
-				    <a onclick="changeSlide(1)" class="next"><img src="assets/img/Right.svg"></a>`;
+	lightboxNavigation.innerHTML += `<span class="close cursor" onclick="closeLightBox()"><img src="assets/icon/Times.svg"></span>
+				    <a onclick="changeSlide(-1)" class="prev"><img src="assets/icon/Left.svg"></a>
+				    <a onclick="changeSlide(1)" class="next"><img src="assets/icon/Right.svg"></a>`;
 
 	lightBoxContent.innerHTML = htmlContent;
 	lightBoxContainer.innerHTML = "";
