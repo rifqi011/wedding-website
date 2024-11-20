@@ -85,7 +85,7 @@ window.addEventListener("scroll", () => {
 		hour = minute * 60,
 		day = hour * 24;
 
-	const countDown = new Date("January 11, 2025 08:30:00").getTime(),
+	const countDown = new Date("November 20, 2024 07:18:00").getTime(),
 		wedding = setInterval(function () {
 			const now = new Date().getTime(),
 				distance = countDown - now;
@@ -100,7 +100,19 @@ window.addEventListener("scroll", () => {
 				// document.getElementById("timer").style.display = "none";
 				(document.getElementById("days").innerText = "0"), (document.getElementById("hours").innerText = "0"), (document.getElementById("minutes").innerText = "0"), (document.getElementById("seconds").innerText = "0");
 				document.getElementById("content-timer").style.display = "block";
-				clearInterval(wedding);
+                clearInterval(wedding);
+                
+                // Fireworks
+                const container = document.createElement('div')
+                container.id = "fireworks"
+                body.appendChild(container)
+
+				const fireworks = new Fireworks.default(container);
+                fireworks.start();
+                setTimeout(() => {
+                    fireworks.stop()
+                    container.remove()
+                }, 60000)
 			}
 		}, 0);
 })();
