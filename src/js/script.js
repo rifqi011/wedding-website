@@ -85,7 +85,7 @@ window.addEventListener("scroll", () => {
 		hour = minute * 60,
 		day = hour * 24;
 
-	const countDown = new Date("November 20, 2024 07:18:00").getTime(),
+	const countDown = new Date("June 02, 2025 07:00:00").getTime(),
 		wedding = setInterval(function () {
 			const now = new Date().getTime(),
 				distance = countDown - now;
