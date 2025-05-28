@@ -127,7 +127,30 @@ document.addEventListener("DOMContentLoaded", () => {
 	lightBoxContainer.className = "lightbox"
 	lightBoxContainer.id = "lightbox"
 	document.body.appendChild(lightBoxContainer)
+
+	// Make functions global
+	window.closeLightBox = function () {
+		lightBoxContainer.style.display = "none"
+		body.style.overflow = "auto"
+	}
+
+	window.changeSlide = function (n) {
+		currentSlideIndex += n
+		if (currentSlideIndex >= images.length) {
+			currentSlideIndex = 0
+		}
+		if (currentSlideIndex < 0) {
+			currentSlideIndex = images.length - 1
+		}
+		const slides = lightBoxContainer.getElementsByClassName("mySlide")
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none"
+		}
+		slides[currentSlideIndex].style.display = "block"
+	}
+
 	function openLightBox(index) {
+		currentSlideIndex = index
 		images = document.querySelectorAll("#gallery .gallery__container img")
 
 		const lightBoxContent = document.createElement("div")
@@ -153,44 +176,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		body.style.overflow = "hidden"
 	}
 
-	function closeLightBox() {
-		lightBoxContainer.style.display = "none"
-		body.style.overflow = "auto"
-	}
+	// Add event listeners
+	document.querySelectorAll("#gallery .gallery__container img").forEach((image, index) => {
+		image.addEventListener("click", () => openLightBox(index))
+	})
 
 	window.addEventListener("click", (event) => {
 		if (event.target == lightBoxContainer) {
-			lightBoxContainer.style.display = "none"
-			body.style.overflow = "scroll"
+			closeLightBox()
 		}
 	})
-
-	document.addEventListener("DOMContentLoaded", () => {
-		document.querySelectorAll("#gallery .gallery__container img").forEach((image, index) => {
-			image.addEventListener("click", () => {
-				openLightBox(index)
-			})
-		})
-	})
-
-	// Slide
-	function changeSlide(n) {
-		currentSlideIndex += n
-
-		if (currentSlideIndex >= images.length) {
-			currentSlideIndex = 0 // Loop back to start
-		}
-		if (currentSlideIndex < 0) {
-			currentSlideIndex = images.length - 1 // Loop back to end
-		}
-
-		const slides = lightBoxContainer.getElementsByClassName("mySlide")
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none" // Hide all slides
-		}
-
-		slides[currentSlideIndex].style.display = "block" // Show current slide
-	}
 
 	// Copy Rek
 	let rekBca = document.getElementById("no-rekening-bca").innerText
@@ -243,7 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	// }
 
 	AOS.init({
-		duration: 2000,
+        duration: 2000,
+        offset: 0
 	})
 
 	// Footer
